@@ -39,4 +39,10 @@ public class Person {
             System.out.println("You didn't take this book");
         }
     }
+    public String getPersonInformation(){
+        StringBuilder infoP = new StringBuilder();
+        infoP.append("id: ").append(id)
+                .append(", name: ").append(firstName).append(" ").append(lastName);
+        return infoP.toString();
+    }
 }
