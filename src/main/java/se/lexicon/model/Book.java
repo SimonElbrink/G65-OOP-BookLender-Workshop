@@ -11,19 +11,24 @@ public class Book {
 
     public Book(String title, String author) {
         validateTitleAndAuthor(title, author);
-        this.title=title;
-        this.author=author;
+        this.title = title;
+        this.author = author;
+        this.available = true;
     }
     public Book (String title, String author, Person borrower) {
         validateTitleAndAuthor(title, author);
         this.title = title;
         this.author = author;
         this.borrower = borrower;
+        this.available = false;
     }
     //setter
     public void setAvailable(boolean available) {
-        this.available=available;
+        this.available = available;
         }
+    public void setBorrower(Person borrower) {
+        this.borrower = borrower;
+    }
     // getters
     public String getId(){
         return id;
