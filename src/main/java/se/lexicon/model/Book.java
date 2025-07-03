@@ -1,6 +1,7 @@
 package se.lexicon.model;
 
 
+import java.util.UUID;
 
 public class Book {
     private String id;
@@ -11,12 +12,14 @@ public class Book {
 
     public Book(String title, String author) {
         validateTitleAndAuthor(title, author);
+        this.id = UUID.randomUUID().toString();
         this.title = title;
         this.author = author;
         this.available = true;
     }
     public Book (String title, String author, Person borrower) {
         validateTitleAndAuthor(title, author);
+        this.id = UUID.randomUUID().toString();
         this.title = title;
         this.author = author;
         this.borrower = borrower;
@@ -52,14 +55,16 @@ public class Book {
 
         }
     }
+    // information abot book
     public String getBookInformation() {
         StringBuilder infoB = new StringBuilder();
         infoB.append("id: ").append(id)
                 .append(", title is: ").append(title)
                 .append(", author is: ").append(author)
                 .append(", available: ").append(available)
-                .append(", borrower is: ").append(borrower);
+                .append(", borrower is: ").append(borrower.getPersonInformation());
 
         return infoB.toString();
     }
+
 }
