@@ -27,7 +27,7 @@ public class Person {
             book.setBorrower(this);
             book.setAvailable(false);
         }else {
-            System.out.println("The book is already taken");
+            System.out.println("The book "+book.getTitle()+" "+book.getAuthor()+" is already taken");
         }
 
     }
