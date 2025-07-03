@@ -1,11 +1,15 @@
 package se.lexicon.model;
 
 
+import java.util.UUID;
+
 /**
  * This class represents a Book model with properties and methods
  * to manage book-related information and operations.
  */
 public class Book {
+
+    private static int sequencer = 0;
 
     private int id;
     private String title;
@@ -13,23 +17,28 @@ public class Book {
     private boolean available;
     private Person borrower;
 
-    public Book(String title, String author){
-       this.title = title;
-       this.author = author;
+    public Book(String title, String author) {
+
+        this.id = getNextId();
+        this.title = title;
+        this.author = author;
     }
-    public Book(String title, String author, Person borrower){
+
+    public Book(String title, String author, Person borrower) {
+        this.id = getNextId();
         this.title = title;
         this.author = author;
         this.borrower = borrower;
+    }
+
+    private int getNextId() {
+        return ++sequencer;
     }
 
     public int getId() {
         return id;
     }
 
-    public void setId(int id) {
-        this.id = id;
-    }
 
     public String getTitle() {
         return title;
@@ -63,7 +72,7 @@ public class Book {
         this.borrower = borrower;
     }
 
-    public String getBookInfo(){
+    public String getBookInfo() {
         return "Book{" +
                 "id=" + id +
                 ", title='" + title + '\'' +

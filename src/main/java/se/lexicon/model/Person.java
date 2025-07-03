@@ -17,6 +17,7 @@ public class Person {
 
 
     public Person(String firstName, String lastName){
+        this.id = getNextId();
         this.firstName = firstName;
         this.lastName = lastName;
     }
@@ -54,10 +55,6 @@ public class Person {
 
     public int getId() {
         return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
     }
 
     public String getFirstName() {
