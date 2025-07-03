@@ -52,4 +52,14 @@ public class Book {
 
         }
     }
+    public String getBookInformation() {
+        StringBuilder infoB = new StringBuilder();
+        infoB.append("id: ").append(id)
+                .append(", title is: ").append(title)
+                .append(", author is: ").append(author)
+                .append(", available: ").append(available)
+                .append(", borrower is: ").append(borrower);
+
+        return infoB.toString();
+    }
 }
