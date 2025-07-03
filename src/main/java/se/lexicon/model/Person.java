@@ -1,8 +1,17 @@
 package se.lexicon.model;
-/**
- * This class represents a Person model with properties and methods
- * to manage personal details and interactions with the library system.
- */
+
 public class Person {
-    // todo: needs completion
+    private static int sequencer = 0;
+    private int id;
+    private String firstName;
+    private String lastName;
+
+    public Person (String firstName, String lastName){
+        this.id = getNextId();
+        this.firstName = firstName;
+        this.lastName = lastName;
+    }
+    private static int getNextId() {
+        return sequencer++;
+    }
 }
