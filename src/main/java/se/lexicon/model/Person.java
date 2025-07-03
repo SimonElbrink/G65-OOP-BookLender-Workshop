@@ -17,8 +17,26 @@ public class Person {
         this.firstName = firstName;
         this.lastName = lastName;
     }
-
+// ID counter method
     private static int getNextId() {
         return sequencer++;
+    }
+    // loan book and return book methods
+    public void loanBook(Book book){
+        if(book.isAvailable()){
+            book.setBorrower(this);
+            book.setAvailable(false);
+        }else {
+            System.out.println("The book is already taken");
+        }
+
+    }
+    public void returnBook(Book book) {
+        if(book.getBorrower()==this) {
+            book.setAvailable(true);
+            book.setBorrower(null);
+        }else {
+            System.out.println("You didn't take this book");
+        }
     }
 }
