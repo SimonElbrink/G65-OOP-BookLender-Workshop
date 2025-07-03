@@ -61,8 +61,12 @@ public class Book {
         infoB.append("id: ").append(id)
                 .append(", title is: ").append(title)
                 .append(", author is: ").append(author)
-                .append(", available: ").append(available)
-                .append(", borrower is: ").append(borrower.getPersonInformation());
+                .append(", available: ").append(available);
+                if(borrower!=null) {
+                infoB.append(", borrower is: ").append(borrower.getPersonInformation());
+                }else{
+                    infoB.append(", borrower is: null");
+                }
 
         return infoB.toString();
     }
