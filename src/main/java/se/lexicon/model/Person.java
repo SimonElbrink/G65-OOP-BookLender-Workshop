@@ -79,6 +79,6 @@ public class Person {
         info.append("Person info -> ID").append(id)
                 .append(", First name: ").append(firstName)
                 .append(", Lastname: ").append(lastName);
-        return null;
+        return info.toString();
     }
 }
