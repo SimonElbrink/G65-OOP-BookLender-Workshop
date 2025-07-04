@@ -17,8 +17,8 @@ public class Person {
     }
 
     /**
-     * geters
-     * seters
+     * getters
+     * setters
      * */
 
     public void setFirstName(String firstName){

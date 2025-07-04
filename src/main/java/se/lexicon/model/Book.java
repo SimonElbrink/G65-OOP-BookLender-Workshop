@@ -31,8 +31,8 @@ public class Book {
     }
 
     /**
-     * geters
-     * seters
+     * getters
+     * setters
      * */
 
     public void setAuthor(String author) {
