@@ -16,18 +16,18 @@ public class Book {
     private Person borrower;
 
     public Book(String title, String author){
-        this.title = title;
-        this.author = author;
+        setTitle(title);
+        setAuthor(author);
         this.id = generateID();
-        this.available = true;
+        setAvailable(true);
     }
 
 
     public Book(String title, String author, Person borrower){
-        this.title = title;
-        this.author = author;
-        this.available = false;
-        this.borrower = borrower;
+        setTitle(title);
+        setAuthor(author);
+        setAvailable(false);
+        setBorrower(borrower);
     }
 
     /**
@@ -78,8 +78,8 @@ public class Book {
         info.append("Book info -> ID: ").append(id)
             .append(", Title: ").append(title)
             .append(". Author: ").append(author);
-        if (borrower != null){
-            info.append(", Borrower").append(borrower.getPersonInformation());
+        if (!available){
+            info.append(", Borrower: ").append(borrower.getPersonInformation());
         }else {
             info.append(", No borrower.");
         }

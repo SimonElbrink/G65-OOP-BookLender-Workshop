@@ -5,7 +5,7 @@ package se.lexicon.model;
  */
 public class Person {
     // todo: needs completion
-    private int sequencer = 0;
+    private static int sequencer = 0;
     private int id;
     private String firstName;
     private String lastName;
@@ -62,7 +62,7 @@ public class Person {
         }
        book.setAvailable(false);
        book.setBorrower(this);
-        System.out.println(" " + firstName + " " + lastName + " borrowed the book" + book.getTitle()
+        System.out.println(firstName + " " + lastName + " borrowed the book" + book.getTitle()
                 + " " + book.getAuthor());
     }
 
@@ -76,7 +76,7 @@ public class Person {
 
     public String getPersonInformation(){
         StringBuilder info = new StringBuilder();
-        info.append("Person info -> ID").append(id)
+        info.append("Person info -> ID: ").append(id)
                 .append(", First name: ").append(firstName)
                 .append(", Lastname: ").append(lastName);
         return info.toString();
