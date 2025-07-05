@@ -19,7 +19,8 @@ public class App {
         System.out.println(archOfTriumph.getBookInformation());
         masha.returnBook(archOfTriumph);
         System.out.println(archOfTriumph.getBookInformation());
-
+        Book lordOfTheFlies = new Book("Lord of the flies", "William Golding", maksim);
+        System.out.println(lordOfTheFlies.getBookInformation());
     }
 
 }

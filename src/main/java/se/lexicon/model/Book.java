@@ -28,6 +28,7 @@ public class Book {
         setAuthor(author);
         setAvailable(false);
         setBorrower(borrower);
+        this.id = generateID();
     }
 
     /**
